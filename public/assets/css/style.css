@@ -780,7 +780,7 @@ h1 {
   width: 100%;
   height: 100%;
   margin: auto;
-  object-fit: fill;
+  object-fit: contain;
 
 
 }
@@ -1022,14 +1022,17 @@ form input {
 }
 
 .user {
-  width: 150px;
+ 
+  /* width: 150px; */
   height: 150px;
   border-radius: 50%;
+  width: 100%;
   overflow: hidden;
-  position: absolute;
-  top: calc(-143px/1);
+  object-fit: contain;
+  text-align: center;
+  /* position: absolute; */
+  top: calc(-128px/1);
 
-  left: calc(50% - 71px);
 }
 
 h2 {
@@ -1050,7 +1053,7 @@ h2 {
 
 .loginBox input {
   width: 100%;
-  margin-bottom: 20px;
+  margin-bottom: 7px;
   padding: 10px;
 }
 select,
