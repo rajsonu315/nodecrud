@@ -1,6 +1,6 @@
-<%- include('./partials/header.ejs') %>
+<!-- <%- include('./partials/header.ejs') %> -->
 
-  <div class="container">
+<!-- <div class="container">
     <div class="row">
       <div class="col-sm-6 mt-5">
         <h2 class="alert alert-success text-center">Add New Student</h2>
@@ -75,6 +75,100 @@
           </table>
       </div>
     </div>
+  </div> -->
+
+<!-- <%- include('./partials/footer.ejs') %> -->
+<!DOCTYPE html>
+<html lang="en" class="notranslate" translate="no">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="LOVE RUSH program is ready to go on live">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google" content="notranslate">
+
+  <title>Ultra tech</title>
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/popper.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="assets/css/style.css" class="rek">
+  <script src="assets/js/html2canvas.js"></script>
+
+  <style>
+    #uploadedImage {
+      height: 100px;
+      object-fit: contain;
+      align-items: center;
+      text-align: center;
+      width: 100%;
+    }
+  </style>
+
+</head>
+
+<body>
+
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="loginBox">
+        <img class="user" src="./assets/logo.png">
+
+        <form   enctype="multipart/form-data" method="POST"> <br>
+
+          <input type="text" name="name" placeholder="Name" autocomplete="off" required>
+          <input id="phonenum" name="number" type="tel" pattern="[A-Za-z0-9]+" maxlength="10" autocomplete="off"
+            placeholder="Please enter your number" required>
+          <input type="text" name="Participant_name" placeholder="Participant Name" autocomplete="off" required>
+          <input type="text" name="Firm_name" placeholder="Firm Name" autocomplete="off" required>
+
+          <div class="form-group">
+            <!-- <label for="exampleFormControlSelect1"> Select Location</label> -->
+            <select name="location" id="exampleFormControlSelect1">
+              <option selected>Select Location.</option>
+              <option>Delhi</option>
+              <option>Bihar</option>
+
+            </select>
+          </div>
+          <input type='file' name="image" capture="user" accept="image/*" id="readUrl" required>
+          <img id="uploadedImage" src="#" alt="Uploaded Image" capture="user" accept="image/*" style="display:none;">
+
+          <input type="submit" class="custom-btn btn-1" id="btnAdd" name="submity" value="Submit">
+
+        </form>
+      </div>
+    </div>
+
   </div>
 
-  <%- include('./partials/footer.ejs') %>
+
+
+
+
+  <script src="./assets/js/script.js"></script>
+  <script src='./assets/js/splitting.min.js'></script>
+  <script>
+
+    Splitting();
+
+  </script>
+
+
+  <script>
+    document.getElementById('readUrl').addEventListener('change', function () {
+      if (this.files[0]) {
+        var picture = new FileReader();
+        picture.readAsDataURL(this.files[0]);
+        picture.addEventListener('load', function (event) {
+          document.getElementById('uploadedImage').setAttribute('src', event.target.result);
+          document.getElementById('uploadedImage').style.display = 'block';
+        });
+      }
+    });
+  </script>
+</body>
+
+</html>

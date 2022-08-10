@@ -1,20 +1,33 @@
 import StudentModel from "../models/Student.js"
 
 class StudentController {
+
+  // static vegdownload = (req, res) => {
+   
+  // res.render("download")
+
+  // }
+
+
+
+
+
   // Create Document
   static createDoc = async (req, res) => {
     // console.log(req.body)
     try {
-      const {name, age, fees} = req.body
+      const {name, number, Participant_name ,Firm_name , location} = req.body
       const doc = new StudentModel({
         name:name,
-        age:age,
-        fees:fees
+        number:number,
+        Participant_name:Participant_name ,
+        Firm_name :Firm_name ,
+        location:location
       })
       // Saving Document
       const result = await doc.save()
-      // console.log(result)
-      res.redirect("/student")
+       console.log(result.name)
+      res.render("download", {data: result.name})
     } catch (error) {
       console.log(error)
     }

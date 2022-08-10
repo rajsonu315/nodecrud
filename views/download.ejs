@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en" class="notranslate" translate="no">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="LOVE RUSH program is ready to go on live">
+    <meta name="viewport" content="width=device-width, user-scalable=no" />
+    <meta name="google" content="notranslate">
+
+    <title>Ultra tech</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="assets/css/style.css" class="rek">
+    <script src="assets/js/html2canvas.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+
+    <style>
+        .mymain {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        a.blantershow-chat {
+            background: #fff;
+            color: #404040;
+            position: fixed;
+            display: flex;
+            font-weight: 400;
+            justify-content: space-between;
+            z-index: 98;
+            bottom: 25px;
+            right: 30px;
+            font-size: 15px;
+            padding: 10px 20px;
+            border-radius: 30px;
+            box-shadow: 0 1px 15px rgba(32, 33, 36, 0.28);
+        }
+
+        a.blantershow-chat svg {
+            transform: scale(1.2);
+            margin: 0 10px 0 0;
+        }
+    </style>
+
+
+    <style>
+        .download-container {
+            position: relative;
+
+            justify-content: center;
+            align-items: center;
+        }
+
+        .download-btn {
+            color: #fff;
+            text-decoration: none;
+
+            text-align: center;
+
+        }
+
+        .Download {
+            font-size: 10px;
+        }
+
+
+
+        .download-btn i {
+            margin-left: 5px;
+        }
+
+        .countdown {
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .countdown span {
+            color: #0693f6;
+            font-size: 1.5em;
+            font-weight: 800;
+        }
+
+        .pleaseWait-text,
+        .manualDownload-text {
+            font-size: 1.1rem;
+            font-weight: 600;
+            display: none;
+        }
+
+        .manualDownload-link {
+            text-decoration: none;
+            color: #0693f6;
+            font-weight: 800;
+        }
+
+        .namedaynamic {
+            text-transform: capitalize;
+        }
+    </style>
+
+
+    <style>
+        .namedaynamic h3 {
+            position: absolute;
+            font-family: "Courier New", Courier, monospace;
+            color: rgb(0, 0, 0);
+            font-weight: 700;
+            /* top: 0; */
+            z-index: 999;
+            text-align: center;
+            top: 186px;
+            width: 100%;
+            font-size: 14px;
+            /* left: 157px; */
+        }
+
+
+        #namedaynamic {
+            margin-top: 100px;
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+
+    
+
+
+
+
+
+
+
+
+
+    <div class="mymain">
+        <div class="content ifm" id="capture">
+            <div class="myimg">
+                <img src="./purshottam/Participation_certificate.jpeg" alt="" class="img-circle camimg"
+                    style="display: block;z-index: 999;">
+
+            </div>
+            <div class="cameraclick">
+             
+                <div class=" namedaynamic">
+                    <h3 id="example2" >  <%= data %></h3>
+                </div>
+
+
+            </div>
+        </div>
+
+        <div class="footer">
+
+            <div class="d-flex justify-content-around">
+
+
+                <div class="p-2 custom-btn btn-1">
+                    <button type="button" style="background: transparent;border: navajowhite; color: rgb(0, 0, 0);"
+                        class="btnScreenShot btn-up " id="btnScreenShot">
+                        <a onclick="doCapture(); " class=" dl-button" href="">
+                            <div class="download-container">
+                                <a href="#" class="download-btn text-dark">Download <i class="fa fa-download"></i></a>
+                                <div class="countdown"></div>
+                                <div class="pleaseWait-text">Please wait ...</div>
+                                <!-- <div class="manualDownload-text">
+                                    <a href="#" class="manualDownload-link" target="_top"> <a class='blantershow-chat'
+                                            href='javascript:void' title='Show Chat'><svg width="20"
+                                                viewBox="0 0 24 24">
+                                                <defs />
+                                                <path fill="#eceff1"
+                                                    d="M20.5 3.4A12.1 12.1 0 0012 0 12 12 0 001.7 17.8L0 24l6.3-1.7c2.8 1.5 5 1.4 5.8 1.5a12 12 0 008.4-20.3z" />
+                                                <path fill="#4caf50"
+                                                    d="M12 21.8c-3.1 0-5.2-1.6-5.4-1.6l-3.7 1 1-3.7-.3-.4A9.9 9.9 0 012.1 12a10 10 0 0117-7 9.9 9.9 0 01-7 16.9z" />
+                                                <path fill="#fafafa"
+                                                    d="M17.5 14.3c-.3 0-1.8-.8-2-.9-.7-.2-.5 0-1.7 1.3-.1.2-.3.2-.6.1s-1.3-.5-2.4-1.5a9 9 0 01-1.7-2c-.3-.6.4-.6 1-1.7l-.1-.5-1-2.2c-.2-.6-.4-.5-.6-.5-.6 0-1 0-1.4.3-1.6 1.8-1.2 3.6.2 5.6 2.7 3.5 4.2 4.2 6.8 5 .7.3 1.4.3 1.9.2.6 0 1.7-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.2-.3-.3-.6-.4z" />
+                                            </svg> Share Now
+                                        </a></a>
+                                </div> -->
+                            </div>
+                        </a>
+                    </button>
+                </div>
+
+
+                <!-- shere icon -->
+
+
+                <!-- code end shere  -->
+
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+    <!-- <div id="img-out"></div> -->
+
+    <script src="assets/js/script.js"></script>
+    <script src='assets/js/splitting.min.js'></script>
+
+
+    <script>
+
+
+
+
+
+        Splitting();
+
+
+
+    </script>
+
+
+
+
+    <script>
+        const zoomElement = document.querySelector("canvas");
+        let zoom = 1;
+        const ZOOM_SPEED = 0.1;
+
+        document.addEventListener("wheel", function (e) {
+            if (e.deltaY > 0) {
+                zoomElement.style.transform = `scale(${(zoom += ZOOM_SPEED)})`;
+            } else {
+                zoomElement.style.transform = `scale(${(zoom -= ZOOM_SPEED)})`;
+            }
+        });
+
+    </script>
+
+    <script>
+        const download = document.querySelector('.download-btn');
+        const countdown = document.querySelector('.countdown');
+        const pleaseWaitText = document.querySelector('.pleaseWait-text');
+        const manualDownloadText = document.querySelector('.manualDownload-text');
+        const manualDownloadLink = document.querySelector('.manualDownload-link');
+        var timeLeft = 5;
+
+        download.addEventListener('click', () => {
+            download.style.display = "none";
+            countdown.innerHTML = `<p class="Download">Download  <span>${timeLeft}</span> seconds</p>`;
+
+            var downloadTimer = setInterval(function timeCount() {
+                timeLeft--;
+                countdown.innerHTML = `<p class="Download">Download  <span>${timeLeft}</span> seconds</p>`;
+
+                if (timeLeft <= 0) {
+                    clearInterval(downloadTimer);
+                    countdown.innerHTML = `<p class="Download">Download  success </p>`;
+
+
+                    pleaseWaitText.style.display = "block";
+
+
+
+
+
+
+                    setTimeout(() => {
+                        pleaseWaitText.style.display = "none";
+                        manualDownloadText.style.display = "block";
+                    }, 1000);
+
+                    doCapture()
+                }
+            }, 1000);
+        });
+    </script>
+
+
+</body>
+
+</html>
