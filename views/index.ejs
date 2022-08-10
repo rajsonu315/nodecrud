@@ -104,15 +104,16 @@
       text-align: center;
       width: 100%;
     }
+
     .gradient-text {
-            text-align: center;
+      text-align: center;
 
-            font-weight: 700;
+      font-weight: 700;
 
 
-            color: #ffff;
+      color: #ffff;
 
-        }
+    }
   </style>
 
 </head>
@@ -125,7 +126,7 @@
       <div class="loginBox">
         <img class="user" src="./assets/logo.png">
 
-        <form   enctype="multipart/form-data" method="POST"> <br>
+        <form enctype="multipart/form-data" method="POST"> <br>
           <h4 class="gradient-text">Painting Competition</h4>
 
           <input type="text" name="name" placeholder="Name" autocomplete="off" required>
@@ -134,22 +135,32 @@
           <input type="text" name="Participant_name" placeholder="Participant Name" autocomplete="off" required>
           <div class="form-group">
             <!-- <label for="exampleFormControlSelect1"> Select Location</label> -->
-            <select id="exampleFormControlSelect1">
-                <option selected>Depot</option>
-                <option>Delhi</option>
-                <option>Bihar</option>
+            <select id="options" name="location" required>
+                <option value="" disabled selected>Select an location</option>
+
+                <option value="DELHI">DELHI</option>
+                <option value="HARYANA">HARYANA</option>
+                <option value="MP">MP</option>
+                <option value="Rajasthan_east">Rajasthan - EAST</option>
+                <option value="Rajasthan_west">Rajasthan - WEST</option>
+                <option value="HP">HP</option>
+                <option value="J&K">J&K</option>
+                <option value="PUNJAB_N">PUNJAB-N</option>
+                <option value="PUNJAB_S">PUNJAB-S</option>
+                <option value="UP_1">UP-1</option>
+                <option value="UP_2">UP-2</option>
 
             </select>
         </div>
-          <div class="form-group">
+        <div class="form-group">
             <!-- <label for="exampleFormControlSelect1"> Select Location</label> -->
-            <select name="location" id="exampleFormControlSelect1">
-              <option selected>Select Location.</option>
-              <option>Delhi</option>
-              <option>Bihar</option>
+            <select id="choices" required name="depot">
+                <option selected>Depot</option>
+
+
 
             </select>
-          </div>
+        </div>
           <input type='file' name="image" capture="user" accept="image/*" id="readUrl" required>
           <img id="uploadedImage" src="#" alt="Uploaded Image" capture="user" accept="image/*" style="display:none;">
 
@@ -185,6 +196,43 @@
         });
       }
     });
+  </script>
+  <script>
+    // Map your choices to your option value
+    var lookup = {
+      'DELHI': ['Delhi-E', 'Delhi-N', 'Delhi-S', 'Delhi-W'],
+      'HARYANA': [' Ambala', 'Faridabad', 'Gurgaon', 'Hissar', 'Karnal', 'Narnaul', 'Panipat', 'Rohtak', 'Sirsa'],
+      'MP': ['Bhopal', 'Dewas', 'Dhar', 'Guna', 'Gwalior', 'Khandwa', 'Indore', 'Khargone', 'Morena', 'Neemuch', 'Ratlam', 'Shajapur', 'Shivpuri', 'Ujjain', 'Vidisha'],
+      'Rajasthan_east': [' Ajmer', 'Alwar', 'Bharatpur', 'Hanumangarh', 'Jaipur-L', 'Jaipur-R', 'Jhunjhunu', 'Kota', 'Bhilwara', 'SAWAI MADHOPUR'],
+      'Rajasthan_west': ['Bikaner', 'Balotra', 'Banswara', 'Jodhpur', 'Pali', 'Udaipur'],
+      'HP': ['Kangra', 'Mandi', 'Mandi', 'Shimla', 'Solan', 'Una'],
+      'J&K': [' Kathua', 'Jammu', 'Srinagar'],
+      'PUNJAB_N': ['Amritsar', 'Gurdaspur', 'Hoshiarpur', 'Jalandhar', 'Ludhiana'],
+      'PUNJAB_S': ['Bhatinda', 'Chandigarh', 'Kotkapura', 'Sangrur', 'Patiala'],
+      'UP_1': ['Agra', 'Aligarh', 'Bareilly', 'Etah', 'Ghaziabad', 'Kashipur', 'Mathura', 'Meerut', 'Moradabad', 'Muzaffarnagar', 'Noida'],
+      'UP_2': ['Bijnore', 'Dehradun', 'Roorkee', 'Saharanpur'],
+
+    };
+
+
+
+
+
+    // When an option is changed, search the above for matching choices
+    $('#options').on('change', function () {
+      // Set selected option as variable
+      var selectValue = $(this).val();
+
+      // Empty the target field
+      $('#choices').empty();
+
+      // For each chocie in the selected option
+      for (i = 0; i < lookup[selectValue].length; i++) {
+        // Output choice in the target field
+        $('#choices').append("<option value='" + lookup[selectValue][i] + "'>" + lookup[selectValue][i] + "</option>");
+      }
+    });
+
   </script>
 </body>
 

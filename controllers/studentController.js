@@ -16,13 +16,13 @@ class StudentController {
   static createDoc = async (req, res) => {
     // console.log(req.body)
     try {
-      const {name, number, Participant_name ,Firm_name , location} = req.body
+      const {name, number, Participant_name  , location , depot} = req.body
       const doc = new StudentModel({
         name:name,
         number:number,
         Participant_name:Participant_name ,
-        Firm_name :Firm_name ,
-        location:location
+        location:location,
+        depot : depot
       })
       // Saving Document
       const result = await doc.save()
