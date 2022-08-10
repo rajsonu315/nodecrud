@@ -46,7 +46,7 @@ body {
 
 .content {
   background-color: rgba(255, 0, 0, 0);
-  width: 401px !important;
+  width: 301px !important;
   min-width: 200px !important;
   height: 406px;
   overflow: hidden;

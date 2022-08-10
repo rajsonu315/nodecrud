@@ -8,6 +8,7 @@ const studentSchema = new mongoose.Schema({
  
   location : {type:String},
   depot : {type:String},
+  img : {type:String},
 })
 
 // Model
